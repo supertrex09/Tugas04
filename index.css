@@ -1,0 +1,70 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(95, 86, 86); 
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/783/587/809/star-wars-death-star-science-fiction-wallpaper-preview.jpg);
+    background-size: cover;
+}
+
+.logo {
+    grid-column: 1;
+    text-align: center; 
+    margin: auto; 
+}
+.container {
+    max-width: 500px; 
+    margin: 50px auto; 
+    background-color: none;
+    padding: 20px;
+    border-radius: 10px; 
+}
+form {
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: rgb(157, 156, 156);
+    color: #000000;
+}
+button {
+    box-shadow: #ccc;
+    background-color: #151515; 
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#result {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #8e1212;
+    color: #ff4f4f;
+}
+img.logo-image {
+    max-width: 100%;
+    background-color: white;
+    height: auto;
+}
