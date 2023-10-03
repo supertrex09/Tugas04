@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Sederhana</title>
+    <style>
+        *{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: rgb(95, 86, 86); 
+            background-image: url(https://c4.wallpaperflare.com/wallpaper/783/587/809/star-wars-death-star-science-fiction-wallpaper-preview.jpg);
+            background-size: cover;
+        }
+
+        .logo {
+            grid-column: 1;
+            text-align: center; 
+            margin: auto; 
+        }
+        .container {
+            max-width: 500px; 
+            margin: 50px auto; 
+            background-color: none;
+            padding: 20px;
+            border-radius: 10px; 
+        }
+        form {
+            border: none;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: rgb(157, 156, 156);
+            color: #000000;
+        }
+        button {
+            box-shadow: #ccc;
+            background-color: #151515; 
+            color: rgb(255, 255, 255);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #8e1212;
+            color: #ff4f4f;
+        }
+        img.logo-image {
+            max-width: 100%;
+            background-color: white;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Skynet_Terminator_logo.png" alt="Logo" class="logo-image"> <!-- Add your logo URL -->
+    </div>
+    <div class="container">
+        <h1 style="color: #ede5e5;font-family: Georgia, 'Times New Roman', Times, serif; align-self: center;">WELCOME TO THE SKYNET UNIVERSiTY</h1>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="nameInput" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="domisili"></Address>Student Number:</label>
+            <input type="text" id="domisili" name="domisili" required>
+
+            <label for="domisili"></Address>College Subject :</label>
+            <input type="text" id="matkul" name="domisili" required>
+            <label for="domisili"></Address>Lecturer :</label>
+            <input type="text" id="dosen" name="domisili" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+       function suggestNames() {
+            const nameInput = document.getElementById("name");
+            const inputValue = nameInput.value.toLowerCase();
+            const suggestions = nameSuggestions.filter(name => name.toLowerCase().startsWith(inputValue));
+
+            const suggestionsDiv = document.getElementById("nameSuggestions");
+            suggestionsDiv.innerHTML = "";
+
+            if (inputValue.length > 0) {
+                for (const suggestion of suggestions) {
+                    const suggestionElement = document.createElement("div");
+                    suggestionElement.textContent = suggestion;
+                    suggestionElement.classList.add("suggestion");
+                    suggestionElement.addEventListener("click", () => {
+                        nameInput.value = suggestion;
+                        suggestionsDiv.innerHTML = "";
+                    });
+                    suggestionsDiv.appendChild(suggestionElement);
+                }
+            }
+        }
+
+        document.getElementById("name").addEventListener("input", suggestNames);
+
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var domisili = document.getElementById("domisili").value;
+            var institusi = document.getElementById("institusi").value;
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "<h2>Informasi yang Anda masukkan:</h2><p><strong>Nama:</strong> " + name + "</p><p><strong>Email:</strong> " + email + "</p><p><strong>Domisili:</strong> " + domisili + "</p><p><strong>Institusi:</strong> " + institusi + "</p>";
+        });
+    </script>
+</body>
+</html>
